@@ -4,7 +4,13 @@ const colors = require("tailwindcss/colors");
 export default {
   content: ["./src/**/*.{astro,html,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#FDF0D5",
+        secondary: "#AC3931",
+        tertiary: "#537d8d",
+      },
+    },
     fontFamily: {
       roboto: ["Roboto", "sans-serif"],
     },
