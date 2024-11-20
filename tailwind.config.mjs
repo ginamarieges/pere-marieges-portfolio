@@ -6,10 +6,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#F8F8F8",
-        secondary: "#F0F7EE",
-        // secondary: "#AC3931",
-        tertiary: "#537d8d",
+        primary: "#F8F8F8", //blanquet
+        secondary: "#AFDEDC", //paissatge
+        architecture: "#C47671", //arquitectura
+        tertiary: "#E4D89A", //ciutat
       },
     },
     fontFamily: {
