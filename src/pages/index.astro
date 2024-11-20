@@ -1,11 +1,14 @@
 ---
+import SectionContainer from '../components/SectionContainer.astro';
 import Layout from '../layouts/Layout.astro';
 import '../styles/tailwind.css'
 ---
 
-<Layout title="Pere Marieges">
+<Layout title="Pere Marieges Portfolio">
 	<main>
-		<h1>It's me, Pere!</h1>
+		<SectionContainer id="#about" title="About me">
+			<h3 class="text-lg text-pretty pt-2">Third-generation architect with a passion for landscape design, blending nature and architecture to create inspiring, sustainable spaces.</h3>
+		</SectionContainer>
 	</main>
 </Layout>
 
