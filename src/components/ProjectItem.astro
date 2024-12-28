@@ -4,18 +4,15 @@ interface Props {
   name: string,
   type: "architecture" | "city" | "landscape",
   images: string[],
+  class: string,
   description: string,
+  summary: string,
   localization: string,
   team?: string
 };
 
-const { description, id, images, localization, name, type, team } = Astro.props;
+const { id, summary, localization, name, class: propsClass, images, type } = Astro.props;
 
-// Divide las imágenes en grupos para replicar la estructura de las columnas
-const columnCount = 3; // Puedes ajustar el número de columnas
-const imageColumns = Array.from({ length: columnCount }, (_, i) => 
-  images.filter((_, index) => index % columnCount === i)
-);
 let backgroundColor = "";
 switch (type) {
   case "architecture":
@@ -28,31 +25,19 @@ switch (type) {
     backgroundColor = "bg-secondary";
     break;
   default:
-    backgroundColor = "bg-gray-500"; // Opcional, para manejar tipos desconocidos
+    backgroundColor = "bg-gray-500";
 };
+const click = () => {
+  console.log("click")
+}
 ---
-<div class={`p-4 ${backgroundColor} text-white rounded-3xl`}>
-  <h2 class="text-xl py-2">{name}</h2>
-
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-    {
-      imageColumns.map((column) => (
-        <div class="grid gap-4">
-          {
-            column.map((image, imgIndex) => (
-              <div>
-                <img 
-                  class="h-auto max-w-full rounded-lg" 
-                  src={`/Project_${id}/${image}`} 
-                  alt={`Image ${imgIndex + 1} of project ${id}`}
-                />
-              </div>
-            ))
-          }
-        </div>
-      ))
-    }
-  </div>
-
-<span>{localization}</span>
+<div class={`p-4 ${backgroundColor} text-white rounded-3xl w-full cursor-pointer`}>
+  <img src={`/Project_${id}/${images[0]}`} class={propsClass} width={800} height={800}>
+  <a href={`/${id}`}>Leer más</a>
+  <div class={`hover:zindex ${backgroundColor}`}></div>
 </div>
+<!-- <div class={`p-4 ${backgroundColor} text-white rounded-3xl w-full h-[150px] cursor-pointer`}>
+  <h2 class="text-xl py-2">{name}</h2>
+  <p>{summary}</p>
+  <span>{localization}</span>
+</div> -->
