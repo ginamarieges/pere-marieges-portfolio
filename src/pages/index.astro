@@ -1,13 +1,21 @@
 ---
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Layout from '../layouts/Layout.astro';
 import '../styles/tailwind.css'
 ---
 
 <Layout title="Pere Marieges Portfolio">
-	<main>
-		<SectionContainer id="#about" title="About me">
-			<h3 class="text-lg text-pretty pt-2">Third-generation architect with a passion for landscape design, blending nature and architecture to create inspiring, sustainable spaces.</h3>
+	<main class="flex flex-col px-8">
+		<SectionContainer id="about" title="About me">
+			<h3 class="text-lg text-pretty">Third-generation architect with a passion for landscape design, blending nature and architecture to create inspiring, sustainable spaces.</h3>
+		</SectionContainer>
+		<SectionContainer id="projects" title="Projects">
+			<Projects/>
+		</SectionContainer>
+		<SectionContainer id="experience" title="Experience">
+			<Experience/>
 		</SectionContainer>
 	</main>
 </Layout>
