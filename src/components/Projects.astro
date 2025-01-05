@@ -87,13 +87,12 @@ const PROJECTS: Project[] = [
 
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">  
+<div class="masonry-cols-1 md:masonry-cols-2 lg:masonry-cols-3 gap-4">
   {
     PROJECTS.map(project => (
-      <div >
+      <div class="break-inside">
         <ProjectItem {...project} class="h-auto max-w-full rounded-lg"></ProjectItem>
       </div>
     ))
   }                
 </div>
-

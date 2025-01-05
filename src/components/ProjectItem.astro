@@ -27,17 +27,8 @@ switch (type) {
   default:
     backgroundColor = "bg-gray-500";
 };
-const click = () => {
-  console.log("click")
-}
 ---
-<div class={`p-4 ${backgroundColor} text-white rounded-3xl w-full cursor-pointer`}>
+<div class={`text-white rounded-3xl w-full cursor-pointer pb-4`}>
   <img src={`/Project_${id}/${images[0]}`} class={propsClass} width={800} height={800}>
-  <h2 class="mt-4 text-center"><a href={`/${id}`}>{name}</a></h2>
-  <div class={`hover:zindex ${backgroundColor}`}></div>
 </div>
-<!-- <div class={`p-4 ${backgroundColor} text-white rounded-3xl w-full h-[150px] cursor-pointer`}>
-  <h2 class="text-xl py-2">{name}</h2>
-  <p>{summary}</p>
-  <span>{localization}</span>
-</div> -->
+
