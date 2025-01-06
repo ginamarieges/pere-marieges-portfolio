@@ -1,0 +1,39 @@
+---
+interface Props {
+  id: number,
+  name: string,
+  type: "architecture" | "city" | "landscape",
+  images: string[],
+  class: string,
+  description: string,
+  summary: string,
+  localization: string,
+  team?: string
+};
+
+const { id, name, class: propsClass, images, type } = Astro.props;
+const getBackgroundColor = (type: string) => {
+  let backgroundColor = "";
+  switch (type) {
+    case "architecture":
+      backgroundColor = "bg-architecture";
+      break;
+    case "city":
+      backgroundColor = "bg-tertiary";
+      break;
+    case "landscape":
+      backgroundColor = "bg-secondary";
+      break;
+    default:
+      backgroundColor = "bg-gray-500";
+  };
+  return backgroundColor;
+}
+
+---
+<div class="break-inside group relative">
+  <img src={`/Project_${id}/${images[0]}`} class={propsClass} width={800} height={800}>
+  <div class={`absolute inset-0 ${getBackgroundColor(type)} bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center`}>
+    <span class="text-lg text-center text-gray-800 mx-4">{name}</span>
+  </div>
+</div>
