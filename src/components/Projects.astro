@@ -1,5 +1,5 @@
 ---
-import ProjectItem from "./ProjectItem.astro"
+import Project from "./Project.astro";
 
 type Project = {
   id: number,
@@ -84,16 +84,13 @@ const PROJECTS: Project[] = [
 
   }
 ];
-
 ---
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">  
+<div class="masonry-cols-1 md:masonry-cols-2 gap-2">
   {
     PROJECTS.map(project => (
-      <div >
-        <ProjectItem {...project} class="h-auto max-w-full rounded-lg"></ProjectItem>
+      <div class="p-6">
+        <Project {...project} class="h-auto max-w-full"></Project>
       </div>
     ))
   }                
 </div>
-

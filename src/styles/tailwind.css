@@ -26,7 +26,7 @@
   }
 
   body {
-    background-color: #f0f7ee;
+    background-color: #ffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -64,5 +64,26 @@
     html {
       scroll-behavior: auto;
     }
+  }
+}
+
+@layer utilities {
+  .masonry {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem; /* Ajusta según gap */
+  }
+  .masonry > * {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+  }
+  .masonry-cols-1 {
+    column-count: 1;
+  }
+  .masonry-cols-2 {
+    column-count: 2;
+  }
+  .masonry-cols-3 {
+    column-count: 3;
   }
 }
